@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Gratulacje ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.box {
+    background: rgba(255,255,255,0.2);
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 45px;
+}
+
+p {
+    font-size: 22px;
+}
+
+/* Animowane serca */
+.heart {
+    position: absolute;
+    font-size: 30px;
+    animation: explode 2s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3) translateY(-100px); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Gratulacje!!! 🎉❤️</h1>
+    <p>Dziękuję, że jesteś moją Walentynką! 🥰</p>
+    <p>To najlepsza decyzja w historii! 💖</p>
+</div>
+
+<script>
+function explodeHearts() {
+    for (let i = 0; i < 10; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 2000);
+    }
+}
+
+setInterval(explodeHearts, 800);
+</script>
+
+</body>
+</html>
